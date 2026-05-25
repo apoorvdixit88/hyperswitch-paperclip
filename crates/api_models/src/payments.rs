@@ -9175,12 +9175,6 @@ pub struct PaymentListFiltersV2 {
     pub card_discovery: Vec<enums::CardDiscovery>,
 }
 
-#[derive(Clone, Debug, serde::Serialize)]
-pub struct PaymentsAggregateResponse {
-    /// The list of intent status with their count
-    pub status_with_count: HashMap<enums::IntentStatus, i64>,
-}
-
 #[derive(
     Clone, Debug, Eq, PartialEq, serde::Deserialize, serde::Serialize, ToSchema, SmithyModel,
 )]

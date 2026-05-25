@@ -196,8 +196,6 @@ pub enum Flow {
     PaymentsList,
     /// Payments filters flow
     PaymentsFilters,
-    /// Payments aggregates flow
-    PaymentsAggregate,
     /// Payments Create Intent flow
     PaymentsCreateIntent,
     /// Payments Get Intent flow

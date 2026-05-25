@@ -4,6 +4,14 @@ All notable changes to HyperSwitch will be documented here.
 
 - - -
 
+## Unreleased
+
+### Removed
+
+- **payments:** Remove `GET /payments/aggregate` and `GET /payments/profile/aggregate` endpoints (v1 and v2) along with their backing handlers, core `get_aggregates_for_payments`, `PaymentsAggregateResponse` type, and `Flow::PaymentsAggregate` flow. The endpoints were causing production latency issues; callers must move off them.
+
+- - -
+
 ## 2026.05.25.0
 
 ### Features
