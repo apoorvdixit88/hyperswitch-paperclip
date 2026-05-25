@@ -9,8 +9,7 @@ UPDATE events
 SET initiator_merchant_id = merchant_id
 WHERE initiator_merchant_id IS NULL;
 
-CREATE UNIQUE INDEX IF NOT EXISTS events_initiator_merchant_id_event_id_index
-    ON events (initiator_merchant_id, event_id);
-
-CREATE INDEX IF NOT EXISTS events_initiator_merchant_id_initial_attempt_id_index
-    ON events (initiator_merchant_id, initial_attempt_id);
+-- Note: The two supporting indexes on (initiator_merchant_id, event_id) and
+-- (initiator_merchant_id, initial_attempt_id) are created in dedicated
+-- follow-up migrations using CREATE INDEX CONCURRENTLY to avoid locking the
+-- high-volume `events` (outgoing webhooks) table during the build.
