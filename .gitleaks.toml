@@ -1,0 +1,9 @@
+# Gitleaks configuration for Hyperswitch
+# https://github.com/gitleaks/gitleaks?tab=readme-ov-file#configuration
+
+[[allowlists]]
+description = "Test admin API key used throughout dev/setup scripts is not a secret"
+paths = [
+    '''scripts/''',
+]
+rules = ["curl-auth-header"]

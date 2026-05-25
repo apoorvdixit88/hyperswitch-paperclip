@@ -89,6 +89,14 @@ pub async fn user_signup(
     .await
 }
 
+/// Handler for the user signin flow.
+///
+/// Served from two routes:
+/// - `POST /user/signin` - deprecated, retained for backward compatibility.
+/// - `POST /user/v2/signin` - canonical path; new integrations should use this.
+///
+/// Both routes share the same request/response contract; the deprecation is
+/// a routing-level rename, not a behaviour change.
 pub async fn user_signin(
     state: web::Data<AppState>,
     http_req: HttpRequest,

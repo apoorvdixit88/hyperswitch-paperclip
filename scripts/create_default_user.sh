@@ -12,7 +12,7 @@ health_response_body=$(echo "${health_response}" | head -n1)
 
 # Try signin first
 signin_payload="{\"email\":\"${EMAIL}\",\"password\":\"${PASSWORD}\"}"
-signin_response=$(curl -s -X POST -H "Content-Type: application/json" -H "api-key: hyperswitch" -H "User-Agent: HyperSwitch-Shell-Client/1.0" -H "Referer: ${HYPERSWITCH_CONTROL_CENTER_URL}/" -d "${signin_payload}" "${HYPERSWITCH_SERVER_URL}/user/signin")
+signin_response=$(curl -s -X POST -H "Content-Type: application/json" -H "api-key: hyperswitch" -H "User-Agent: HyperSwitch-Shell-Client/1.0" -H "Referer: ${HYPERSWITCH_CONTROL_CENTER_URL}/" -d "${signin_payload}" "${HYPERSWITCH_SERVER_URL}/user/v2/signin") # gitleaks:allow
 
 # Check if user needs to be created
 if [[ $(
