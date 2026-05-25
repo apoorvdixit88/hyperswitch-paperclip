@@ -1,5 +1,4 @@
-DROP INDEX IF EXISTS events_initiator_merchant_id_initial_attempt_id_index;
-DROP INDEX IF EXISTS events_initiator_merchant_id_event_id_index;
-
+-- The two supporting indexes on `events` are torn down in their own dedicated
+-- migrations (reverted before this one) using DROP INDEX CONCURRENTLY.
 ALTER TABLE events
 DROP COLUMN IF EXISTS initiator_merchant_id;
