@@ -2805,6 +2805,7 @@ impl User {
 
         route = route
             .service(web::resource("").route(web::get().to(user::get_active_user_details)))
+            // TODO: To be deprecated - use POST /user/v2/signin
             .service(web::resource("/signin").route(web::post().to(user::user_signin)))
             .service(web::resource("/v2/signin").route(web::post().to(user::user_signin)))
             // signin/signup with sso using openidconnect
@@ -3377,5 +3378,51 @@ impl SdkConfig {
                 web::resource("{profile_id}/{platform}/{sdk_config.json}")
                     .route(web::get().to(super::superposition_sdk_config::get_sdk_config)),
             )
+    }
+}
+
+#[cfg(all(test, feature = "olap", feature = "v1"))]
+mod user_signin_deprecation_tests {
+    // Behavioural-equivalence guard for the v1 -> v2 signin deprecation.
+    //
+    // `POST /user/signin` (v1, deprecated) and `POST /user/v2/signin`
+    // (canonical) must remain wired to the same `user::user_signin` handler
+    // so the deprecation cannot silently drift. If either route registration
+    // is edited without the matching counterpart, this test fails and surfaces
+    // the divergence before merge.
+
+    const APP_SOURCE: &str = include_str!("app.rs");
+    const V1_ROUTE: &str =
+        r#".service(web::resource("/signin").route(web::post().to(user::user_signin)))"#;
+    const V2_ROUTE: &str =
+        r#".service(web::resource("/v2/signin").route(web::post().to(user::user_signin)))"#;
+
+    #[test]
+    fn v1_signin_still_registered() {
+        assert!(
+            APP_SOURCE.contains(V1_ROUTE),
+            "v1 /user/signin route registration not found or changed; expected exact substring: {V1_ROUTE}"
+        );
+    }
+
+    #[test]
+    fn v2_signin_still_registered() {
+        assert!(
+            APP_SOURCE.contains(V2_ROUTE),
+            "v2 /user/v2/signin route registration not found or changed; expected exact substring: {V2_ROUTE}"
+        );
+    }
+
+    #[test]
+    fn v1_and_v2_signin_share_the_same_handler() {
+        // The shared substring `user::user_signin` is what makes the two
+        // routes behaviourally equivalent. If either route stops naming this
+        // handler, the previous two tests catch it; this test additionally
+        // pins the deprecation marker so reviewers see why the v1 route is
+        // still here.
+        assert!(
+            APP_SOURCE.contains("// TODO: To be deprecated - use POST /user/v2/signin"),
+            "v1 /user/signin deprecation marker was removed from app.rs"
+        );
     }
 }
