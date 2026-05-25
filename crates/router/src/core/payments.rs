@@ -9664,36 +9664,6 @@ pub async fn get_payment_filters(
     ))
 }
 
-#[cfg(feature = "olap")]
-pub async fn get_aggregates_for_payments(
-    state: SessionState,
-    platform: domain::Platform,
-    profile_id_list: Option<Vec<id_type::ProfileId>>,
-    time_range: common_utils::types::TimeRange,
-) -> RouterResponse<api::PaymentsAggregateResponse> {
-    let db = state.store.as_ref();
-    let intent_status_with_count = db
-        .get_intent_status_with_count(
-            platform.get_processor().get_account().get_id(),
-            profile_id_list,
-            &time_range,
-        )
-        .await
-        .to_not_found_response(errors::ApiErrorResponse::PaymentNotFound)?;
-
-    let mut status_map: HashMap<enums::IntentStatus, i64> =
-        intent_status_with_count.into_iter().collect();
-    for status in enums::IntentStatus::iter() {
-        status_map.entry(status).or_default();
-    }
-
-    Ok(services::ApplicationResponse::Json(
-        api::PaymentsAggregateResponse {
-            status_with_count: status_map,
-        },
-    ))
-}
-
 #[cfg(feature = "v1")]
 pub async fn add_process_sync_task(
     db: &dyn StorageInterface,

@@ -23,7 +23,7 @@ use crate::{
     },
     payments::{
         self, PaymentListConstraints, PaymentListFilters, PaymentListFiltersV2,
-        PaymentListResponse, PaymentsAggregateResponse, PaymentsSessionResponse,
+        PaymentListResponse, PaymentsSessionResponse,
         RedirectionResponse,
     },
 };
@@ -557,12 +557,6 @@ impl ApiEventMetric for PaymentListResponseV2 {
         Some(ApiEventsType::ResourceListAPI)
     }
 }
-impl ApiEventMetric for PaymentsAggregateResponse {
-    fn get_api_event_type(&self) -> Option<ApiEventsType> {
-        Some(ApiEventsType::ResourceListAPI)
-    }
-}
-
 impl ApiEventMetric for RedirectionResponse {}
 
 #[cfg(feature = "v1")]

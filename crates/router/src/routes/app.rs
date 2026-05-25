@@ -799,15 +799,8 @@ impl Payments {
                     .route(web::get().to(payments::revenue_recovery_invoices_list)),
             )
             .service(
-                web::resource("/aggregate").route(web::get().to(payments::get_payments_aggregates)),
-            )
-            .service(
                 web::resource("/recovery")
                     .route(web::post().to(payments::recovery_payments_create)),
-            )
-            .service(
-                web::resource("/profile/aggregate")
-                    .route(web::get().to(payments::get_payments_aggregates_profile)),
             );
 
         route =
@@ -937,14 +930,6 @@ impl Payments {
                 )
                 .service(
                     web::resource("/v2/filter").route(web::get().to(payments::get_payment_filters)),
-                )
-                .service(
-                    web::resource("/aggregate")
-                        .route(web::get().to(payments::get_payments_aggregates)),
-                )
-                .service(
-                    web::resource("/profile/aggregate")
-                        .route(web::get().to(payments::get_payments_aggregates_profile)),
                 )
                 .service(
                     web::resource("/v2/profile/filter")

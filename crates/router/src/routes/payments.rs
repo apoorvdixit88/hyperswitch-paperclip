@@ -2145,33 +2145,6 @@ pub async fn get_payment_filters_profile(
     .await
 }
 
-#[instrument(skip_all, fields(flow = ?Flow::PaymentsAggregate))]
-#[cfg(feature = "olap")]
-pub async fn get_payments_aggregates(
-    state: web::Data<app::AppState>,
-    req: actix_web::HttpRequest,
-    payload: web::Query<common_utils::types::TimeRange>,
-) -> impl Responder {
-    let flow = Flow::PaymentsAggregate;
-    let payload = payload.into_inner();
-    Box::pin(api::server_wrap(
-        flow,
-        state,
-        &req,
-        payload,
-        |state, auth: auth::AuthenticationData, req, _| {
-            payments::get_aggregates_for_payments(state, auth.platform, None, req)
-        },
-        &auth::JWTAuth {
-            permission: Permission::MerchantPaymentRead,
-            allow_connected: true,
-            allow_platform: false,
-        },
-        api_locking::LockAction::NotApplicable,
-    ))
-    .await
-}
-
 #[cfg(all(feature = "oltp", feature = "v1"))]
 #[instrument(skip_all, fields(flow = ?Flow::PaymentsApprove, payment_id))]
 pub async fn payments_approve(
@@ -3271,69 +3244,6 @@ impl GetLockingInput for payment_types::PaymentsManualUpdateRequest {
             },
         }
     }
-}
-
-#[instrument(skip_all, fields(flow = ?Flow::PaymentsAggregate))]
-#[cfg(all(feature = "olap", feature = "v1"))]
-pub async fn get_payments_aggregates_profile(
-    state: web::Data<app::AppState>,
-    req: actix_web::HttpRequest,
-    payload: web::Query<common_utils::types::TimeRange>,
-) -> impl Responder {
-    let flow = Flow::PaymentsAggregate;
-    let payload = payload.into_inner();
-    Box::pin(api::server_wrap(
-        flow,
-        state,
-        &req,
-        payload,
-        |state, auth: auth::AuthenticationData, req, _| {
-            payments::get_aggregates_for_payments(
-                state,
-                auth.platform,
-                auth.profile.map(|profile| vec![profile.get_id().clone()]),
-                req,
-            )
-        },
-        &auth::JWTAuth {
-            permission: Permission::ProfilePaymentRead,
-            allow_connected: true,
-            allow_platform: false,
-        },
-        api_locking::LockAction::NotApplicable,
-    ))
-    .await
-}
-#[instrument(skip_all, fields(flow = ?Flow::PaymentsAggregate))]
-#[cfg(all(feature = "olap", feature = "v2"))]
-pub async fn get_payments_aggregates_profile(
-    state: web::Data<app::AppState>,
-    req: actix_web::HttpRequest,
-    payload: web::Query<common_utils::types::TimeRange>,
-) -> impl Responder {
-    let flow = Flow::PaymentsAggregate;
-    let payload = payload.into_inner();
-    Box::pin(api::server_wrap(
-        flow,
-        state,
-        &req,
-        payload,
-        |state, auth: auth::AuthenticationData, req, _| {
-            payments::get_aggregates_for_payments(
-                state,
-                auth.platform,
-                Some(vec![auth.profile.get_id().clone()]),
-                req,
-            )
-        },
-        &auth::JWTAuth {
-            permission: Permission::ProfilePaymentRead,
-            allow_connected: true,
-            allow_platform: false,
-        },
-        api_locking::LockAction::NotApplicable,
-    ))
-    .await
 }
 
 #[cfg(feature = "v2")]
