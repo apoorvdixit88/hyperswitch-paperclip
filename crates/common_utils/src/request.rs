@@ -111,6 +111,12 @@ pub enum RequestContent {
 }
 
 impl RequestContent {
+    /// Serializes the request body to its string representation and wraps it in a [`Secret`].
+    ///
+    /// The serialization format is chosen per variant: JSON for `Json` and `FormData`,
+    /// `application/x-www-form-urlencoded` for `FormUrlEncoded`, and XML for `Xml`. A
+    /// serialization failure or a `RawBytes` payload yields an empty string. The result is
+    /// wrapped in [`Secret`] because the body may carry PII.
     pub fn get_inner_value(&self) -> Secret<String> {
         match self {
             Self::Json(i) => serde_json::to_string(&i).unwrap_or_default().into(),
