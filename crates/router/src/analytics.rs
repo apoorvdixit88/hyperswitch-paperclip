@@ -581,7 +581,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -634,7 +634,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -690,7 +690,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -737,7 +737,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -770,7 +770,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantPaymentRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -812,7 +812,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfilePaymentRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -865,7 +865,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -921,7 +921,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -968,7 +968,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1021,7 +1021,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -1077,7 +1077,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1158,7 +1158,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1239,7 +1239,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1283,7 +1283,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1326,7 +1326,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -1355,7 +1355,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1382,7 +1382,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1415,7 +1415,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -1451,7 +1451,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1484,7 +1484,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -1520,7 +1520,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1582,7 +1582,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1615,7 +1615,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -1651,7 +1651,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1712,7 +1712,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1761,7 +1761,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1806,7 +1806,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1846,7 +1846,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -1947,7 +1947,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::MerchantReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -2034,7 +2034,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::OrganizationReportRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -2142,7 +2142,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::ProfileReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -2244,7 +2244,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::MerchantReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -2330,7 +2330,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::OrganizationReportRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -2437,7 +2437,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::ProfileReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -2540,7 +2540,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::MerchantReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -2627,7 +2627,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::OrganizationReportRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -2733,7 +2733,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::ProfileReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -2835,7 +2835,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::MerchantReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -2921,7 +2921,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::OrganizationReportRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -3035,7 +3035,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::ProfileReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -3138,7 +3138,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::MerchantReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -3225,7 +3225,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::OrganizationReportRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -3331,7 +3331,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::ProfileReportRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -3373,7 +3373,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -3403,7 +3403,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -3446,7 +3446,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -3493,7 +3493,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::ProfileAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -3561,7 +3561,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantPaymentRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -3634,7 +3634,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfilePaymentRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -3966,7 +3966,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -4000,7 +4000,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -4033,7 +4033,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -4072,7 +4072,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -4116,7 +4116,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -4159,7 +4159,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -4189,7 +4189,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -4217,7 +4217,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::MerchantAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -4251,7 +4251,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -4288,7 +4288,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
@@ -4322,7 +4322,7 @@ pub mod routes {
                 &auth::JWTAuth {
                     permission: Permission::OrganizationAnalyticsRead,
                     allow_connected: true,
-                    allow_platform: false,
+                    allow_platform: true,
                 },
                 req.headers(),
             ),
@@ -4359,7 +4359,7 @@ pub mod routes {
             &auth::JWTAuth {
                 permission: Permission::ProfileAnalyticsRead,
                 allow_connected: true,
-                allow_platform: false,
+                allow_platform: true,
             },
             api_locking::LockAction::NotApplicable,
         ))
